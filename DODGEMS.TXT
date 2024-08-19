@@ -1,0 +1,87 @@
+\start83P\
+\comment=Program file dated 08/30/02, 21:22
+\protected=TRUE
+\name=DODGEMS
+\file=E:\DODGEMS.TXT
+ClrDraw
+ClrHome
+CoordOff
+GridOff
+AxesOff
+ExprOff
+LabelOff
+Normal
+PlotsOff 
+94\->\Xmax
+0\->\Xmin
+\(-)\62\->\Ymin
+0\->\Ymax
+1\->\Xscl
+1\->\Yscl
+2\->\dim(\L\DODG
+Text(\(-)\1,20,27,"DODGEMS"
+Text(35,26,"DIEGO ONGARO
+Text(42,20,"GEORGE HATTEMER
+For(B,1,300
+End
+ClrDraw
+Lbl SO
+75\->\B
+While 1
+32\->\P
+47\->\Q
+Text(\(-)\1,25,29,"LEVEL ",B/25-2
+For(T,1,400
+End
+ClrDraw
+Horizontal 0
+Horizontal \(-)\62
+Vertical 0
+Vertical 94
+For(A,1,B
+Pxl-On(randInt(1,62),randInt(1,93
+End
+Pxl-On(P,Q
+getKey
+0
+Repeat abs(W-25)\<=\1 or W=34
+For(V,0,200
+End
+Pt-On(47,\(-)\32,2
+For(V,0,100
+End
+getKey\->\W
+Pt-Off(47,\(-)\32,2
+End
+W\->\\theta\
+For(W,1,350
+getKey
+If Ans
+Ans\->\\theta\
+P-(25=\theta\)+(34=\theta\\->\P
+Q-(24=\theta\)+(26=\theta\\->\Q
+If pxl-Test(P,Q
+Goto S
+Pxl-On(P,Q
+End
+25+B\->\B
+End
+Lbl S
+W-1050+14B\->\H
+If H>\L\DODG(1
+H\->\\L\DODG(1
+ClrDraw
+Text(\(-)\1,1,1,"DISTANCE:",H
+Text(\(-)\1,9,1,"RECORD:",\L\DODG(1
+For(T,1,400
+End
+ClrDraw
+Menu("PLAY AGAIN?     ","YES",SO,"NO",XT
+Lbl XT
+ClrHome
+ZStandard
+ClrDraw
+AxesOn
+Output(1,1,""
+\stop83P\
+
